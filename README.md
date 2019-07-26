@@ -4,13 +4,13 @@ This is to document a simple but costly mistake I experienced when using [FlatLi
 
 However, it is commonly forgotten that `FlatList` is a `PureComponent`, as highlighted [here](https://stackoverflow.com/questions/43397803/how-to-re-render-flatlist).
 
-To fix this, all we need to do is pass in the `extraData` to let `FlatList` know that it needs to re-render when that prop changes.
+To fix this, all we need to do is pass in the `extraData` prop to let `FlatList` know that it needs to re-render when that prop changes.
 
 ```
 <FlatList
   data={data}
   renderItem={this.renderItem}
-  extraData={this.state.selectedItemId}
+  extraData={this.state.selectedItemId} // IMPORTANT!!!
 />
 ```
 
