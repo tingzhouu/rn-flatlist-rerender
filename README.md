@@ -6,6 +6,14 @@ However, it is commonly forgotten that `FlatList` is a `PureComponent`, as highl
 
 To fix this, all we need to do is pass in the `extraData` to let `FlatList` know that it needs to re-render when that prop changes.
 
+```
+<FlatList
+  data={data}
+  renderItem={this.renderItem}
+  extraData={this.state.selectedItemId}
+/>
+```
+
 ### Demo
 1. Demonstration without `extraData`
 <a href="https://drive.google.com/open?id=1Vw36U8_Mw7QwOPpfEtnjMKqfArQd014x">
